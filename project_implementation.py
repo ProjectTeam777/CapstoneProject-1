@@ -202,11 +202,6 @@ print(f'Root Mean Squared Error (Full Period): {rmse_full}')
 print("\nML Trend Indicators DataFrame:")
 print(ml_trend_indicators.head())  # Display the first few rows of the trend indicator DataFrame
 
-import yfinance as yf
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-
 # Download SPY and VIX data
 spy_data = yf.download('SPY', start='2014-09-25', end='2024-09-25')
 vix_data = yf.download('^VIX', start='2014-09-25', end='2024-09-25')
@@ -476,10 +471,6 @@ plt.xticks(rotation=45)
 plt.legend()
 plt.tight_layout()
 plt.show()
-
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
 
 # Merge the trend indicator data
 combined_trends = pd.merge(ml_trend_indicators, ti_trend_indicators, on='Date', suffixes=('_ML', '_TI'))
